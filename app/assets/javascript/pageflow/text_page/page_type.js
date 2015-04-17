@@ -188,7 +188,7 @@ pageflow.pageType.register('text_page', _.extend({
 
     pageElement.find('.content_and_background').toggleClass('no_background_image', !configuration.getImageFile('background_image_id'));
 
-    pageElement.find('.content_and_background').toggleClass('sticky_inline_image', configuration.get('sticky_inline_image'));
+    pageElement.find('.content_and_background').toggleClass('sticky_inline_image', !!configuration.get('sticky_inline_image'));
 
     if(configuration.get('text_position') == "left" || configuration.get('text_position') == "right") {
       this.titleArea = pageElement.find('.backgroundArea .fixed_header_area');
