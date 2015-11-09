@@ -76,7 +76,7 @@ $inverted-background-color: black;
           display: none;
 
           h2 {
-            text-align:center;
+            text-align: center;
             padding: 2em 0;
             margin: 0;
             span {
@@ -148,7 +148,7 @@ $inverted-background-color: black;
             position: relative;
             display: block;
             margin-left: 20px;
-            margin-top: 0px;
+            margin-top: 0;
             margin-bottom: 20px;
             margin-right: -70px;
             pointer-events: all;
@@ -179,7 +179,7 @@ $inverted-background-color: black;
             img {
               width: 100%;
               height: auto;
-              display:block;
+              display: block;
               border: 0;
               outline: 0;
             }
@@ -204,7 +204,6 @@ $inverted-background-color: black;
               background-position: 0 0;
               background-repeat: no-repeat;
               position: absolute;
-              background-color: none;
               background-color: transparent;
               top: 18px;
               right: 18px;
@@ -367,7 +366,7 @@ $inverted-background-color: black;
 }
 
 .page .text_page, .js .page .text_page {
-   .scroller {
+  .scroller {
     > div {
       .contentText {
         a {
@@ -395,14 +394,13 @@ $inverted-background-color: black;
   }
 }
 
-
 .inline_image.out-of-scroller {
   width: 260px;
   height: 260px;
   background-size: cover;
   background-position: center;
   margin-left: 30px;
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 30px;
   margin-right: -80px;
   display: none;
@@ -412,7 +410,7 @@ $inverted-background-color: black;
   z-index: 1;
 }
 
-.narrow_background  {
+.narrow_background {
   .content_background_layer, .header_background_layer {
     width: 800px !important;
     left: 50% !important;
@@ -428,7 +426,8 @@ $inverted-background-color: black;
     }
   }
 }
-.transparent_background  {
+
+.transparent_background {
   .content_background-layer, .header_background-layer {
     opacity: 0.9 !important;
   }
@@ -463,14 +462,14 @@ $inverted-background-color: black;
   &.animate-out-forwards .content_and_background {
     opacity: 1;
   }
-  &.animate-in-backwards .content_and_background{
+  &.animate-in-backwards .content_and_background {
     opacity: 0;
   }
-  &.animate-out-backwards .content_and_background{
+  &.animate-out-backwards .content_and_background {
     opacity: 1;
   }
 
-  &.active .content_and_background{
+  &.active .content_and_background {
     opacity: 1;
   }
 
@@ -481,26 +480,26 @@ $inverted-background-color: black;
   &.animate-in-forwards .backgroundArea {
     opacity: 0;
   }
-  &.animate-out-forwards .backgroundArea{
+  &.animate-out-forwards .backgroundArea {
     opacity: 1;
   }
-  &.animate-in-backwards .backgroundArea{
+  &.animate-in-backwards .backgroundArea {
     opacity: 0;
   }
-  &.animate-out-backwards .backgroundArea{
+  &.animate-out-backwards .backgroundArea {
     opacity: 1;
   }
 
   div.content {
     @include transition(1s ease);
     -webkit-backface-visibility: hidden;
-    @include transform(translate3d(0,0,0));
+    @include transform(translate3d(0, 0, 0));
   }
 
   &.active.animate-in-forwards div.content {
     opacity: 1;
     pointer-events: none;
-    @include transform(translate3d(0,0,0));
+    @include transform(translate3d(0, 0, 0));
   }
 
   &.animate-in-forwards {
@@ -509,14 +508,14 @@ $inverted-background-color: black;
     div.content {
       pointer-events: none;
       opacity: 1;
-      @include transform(translate3d(0,0,0));
+      @include transform(translate3d(0, 0, 0));
     }
   }
   &.animate-out-forwards {
     div.content {
       opacity: 1;
       pointer-events: none;
-      @include transform(translate3d(0,0,0));
+      @include transform(translate3d(0, 0, 0));
     }
   }
   &.animate-in-backwards {
@@ -525,14 +524,14 @@ $inverted-background-color: black;
     .content {
       opacity: 1;
       pointer-events: none;
-      @include transform(translate3d(0,0,0));
+      @include transform(translate3d(0, 0, 0));
     }
   }
   &.animate-out-backwards {
     .content {
       opacity: 1;
       pointer-events: none;
-      @include transform(translate3d(0,0,0));
+      @include transform(translate3d(0, 0, 0));
     }
   }
 }
@@ -548,7 +547,7 @@ $inverted-background-color: black;
         opacity: 0;
       }
     }
-    .fixed_header_area .page_header_wrapper  {
+    .fixed_header_area .page_header_wrapper {
       opacity: 0;
     }
   }
@@ -567,10 +566,7 @@ section.hide_title {
 .hideText {
   .text_page .shadow {
     opacity: 0 !important;
-    -webkit-transition: 0.8s ease !important;
-    -moz-transition: 0.8s ease !important;
-    -ms-transition: 0.8s ease !important;
-    transition: 0.8s ease !important;
+    @include transition(0.8s ease !important);
     visibility: hidden;
   }
 
@@ -587,7 +583,6 @@ section.hide_title {
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 0;
   color: black;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.95);
@@ -626,7 +621,7 @@ section.hide_title {
         max-height: 100%;
         position: relative;
         top: 50%;
-        transform: translate(0,-50%);
+        @include transform(translate(0, -50%));
       }
     }
 
