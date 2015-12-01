@@ -1,3 +1,5 @@
+require 'pageflow-public-i18n'
+
 module Pageflow
   module TextPage
     class Engine < Rails::Engine
