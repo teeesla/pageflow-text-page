@@ -32,24 +32,7 @@ en:
       help_entries:
         page_type:
           menu_item: Text
-          text: ! '# Text Page
-
-
-            Page for long texts
-
-
-            This page is especially designed for longer bodies of text on a neutral background. It offers  whole range of ´options design, which are comparable to the classical blog design (parallax) of sites like WordPress or Tumblr.
-
-
-            There are several options for arranging the title pictures and various ways of embedding another picture into the text body. Pictures within the text can move along with the text or can be fixed to a certain part of the page.
-
-
-            Examples of application: blog article, news article, interview'
-      page:
-        close: Close
-        close_title: Close
-        fullscreen: Fullscreen
-        fullscreen_title: View larger version
+          text: ! "# Text Page\n\n*Page for long texts*\n    \nThis page is especially designed for longer bodies of text on a neutral background. It offers  whole range of ´options design, which are comparable to the classical blog design (parallax) of sites like WordPress or Tumblr.\n\nThere are several options for arranging the title pictures and various ways of embedding another picture into the text body. Pictures within the text can move along with the text or can be fixed to a certain part of the page.\n\nExamples of application: blog article, news article, interview"
       page_type_category_name: Basic
       page_type_description: Longer texts with a banner image
       page_type_name: Text Page
