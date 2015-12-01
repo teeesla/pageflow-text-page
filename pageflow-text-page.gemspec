@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "pageflow-text-page"
-  spec.version       = "0.2.0"
+  spec.version       = "0.3.0.alpha"
   spec.authors       = ["Christoph Merkelbach"]
   spec.email         = ["cmerkelbach@codevise.de"]
   spec.summary       = "Pageflow Page Type text pages"
