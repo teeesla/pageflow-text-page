@@ -660,15 +660,3 @@ section.hide_title {
   color: #FFFEFE;
   text-shadow: 1px 1px 4px #2b2b2b;
 }
-
-.overview .ov_page {
-  &.text_page .pictogram {
-    background-image: image-url('pageflow/ov-text.png');
-  }
-}
-
-.navigation_mobile {
-  .text_page:after {
-    background-image: image-url('pageflow/text_sprite.png');
-  }
-}

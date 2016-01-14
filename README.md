@@ -27,6 +27,9 @@ Include javascripts and stylesheets:
     # app/assets/stylesheets/pageflow/application.css.scss
     @import "pageflow/text_page";
 
+    # app/assets/stylesheets/pageflow/themes/default.css.scss
+    @import "pageflow/text_page/themes/default";
+
 Execute `bundle install` Restart the application server.
 
 ## Troubleshooting
