@@ -10,7 +10,7 @@ de:
         sticky_inline_image: Bild an Seite haften
         text_coverage: Textabdeckung
         text_image_id: Bild im Text
-        text_titel: Überschrift
+        text_titel: "Überschrift"
         text_title: Texttitel
         title_position: Titelposition
         topasset_dim: Abblenden
@@ -32,7 +32,7 @@ de:
       help_entries:
         page_type:
           menu_item: Text
-          text: ! "# Text Seite\n\n*Blog-artige Seite für lange Texte*\n    \nDiese Seite ist speziell für längere Texte auf neutralem Hintergrund ausgelegt. Sie bietet\nbesondere Gestaltungsmöglichkeiten, die mit den Features klassischer (Parallax-) Blog-\nSeiten vergleichbar sind, wie man sie beispielsweise von Tumblr und WordPress kennt.\nEs gibt unterschiedliche Optionen bei der Anordnung von Titel-Bildern und auch\nverschiedene Varianten, ein weiteres Bild im Fließtext einzubinden. Zum Beispiel ob das\nBild mitwandert oder auf dem Bildschirm fixiert wird.\n\nTypische Anwendungsbeispiele: Blog-Artikel, News-Artikel, Interview"
+          text: "# Text Seite\n\n*Blog-artige Seite für lange Texte*\n    \nDiese Seite ist speziell für längere Texte auf neutralem Hintergrund ausgelegt. Sie bietet\nbesondere Gestaltungsmöglichkeiten, die mit den Features klassischer (Parallax-) Blog-\nSeiten vergleichbar sind, wie man sie beispielsweise von Tumblr und WordPress kennt.\nEs gibt unterschiedliche Optionen bei der Anordnung von Titel-Bildern und auch\nverschiedene Varianten, ein weiteres Bild im Fließtext einzubinden. Zum Beispiel ob das\nBild mitwandert oder auf dem Bildschirm fixiert wird.\n\nTypische Anwendungsbeispiele: Blog-Artikel, News-Artikel, Interview"
       page_type_category_name: Basic
       page_type_description: Lange Texte mit einem Banner-Bild
       page_type_name: Text
@@ -47,7 +47,7 @@ de:
           prevent_fullscreen: Verhindert, dass das Fließtextbild bei Klick auf das Bild im Vollbild dargestellt wird.
           sticky_inline_image: Das Bild wird zunächst zusammen mit dem Text gescrollt, bleibt dann aber vertikal zentriert stehen, während der Text weiter scrollt.
           text: Dies ist der Bereich für den Fließtext dieser Seite. Dieser Seitentyp ist für lange Texte optimiert. Bei Kurztexten sollte auf andere Seitentypen zurückgegriffen werden.
-          text_coverage: Legt fest, ein wie großer Teil des Titelbildes initial zu sehen ist.
+          text_coverage: Definiert, wie viel Text (und wie viel vom Titelbild) anfangs sichtbar ist.
           text_image_id: Dieses Bild wird neben dem Text angezeigt.
           topasset_dim: Titlebild abhängig von der Scroll-Position farblich abblenden.
           topasset_parallax: Titelbild abhängig von der Scroll-Position vertikal verschieben.
