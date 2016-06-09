@@ -1,8 +1,19 @@
 # CHANGELOG
 
-### Changes on `master`
+### Version 0.3.0
 
-None so far
+2016-06-09
+
+[Compare changes](https://github.com/codevise/pageflow-text-page/compare/v0.2.0...v0.3.0)
+
+- Use configurable page type pictograms
+  ([#7](https://github.com/codevise/pageflow-text-page/pull/7))
+- Add pageflow-public-i18n gem to gemspec
+  ([#6](https://github.com/codevise/pageflow-text-page/pull/6))
+- Clean up css; improve browser compatibility
+  ([#5](https://github.com/codevise/pageflow-text-page/pull/5))
+- Extract publicly visible i18n strings from locale
+  ([#4](https://github.com/codevise/pageflow-text-page/pull/4))
 
 ### Version 0.2.0
 
