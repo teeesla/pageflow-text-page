@@ -1,10 +1,13 @@
 # coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'pageflow/text_page/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pageflow-text-page"
-  spec.version       = "0.3.0.alpha"
-  spec.authors       = ["Christoph Merkelbach"]
-  spec.email         = ["cmerkelbach@codevise.de"]
+  spec.version       = Pageflow::TextPage::VERSION
+  spec.authors       = ["Codevise Solutions Ltd."]
+  spec.email         = ["info@codevise.de"]
   spec.summary       = "Pageflow Page Type text pages"
   spec.homepage      = "https://github.com/codevise/pageflow-text-page"
   spec.license       = "MIT"
@@ -14,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'pageflow', '~> 0.10.pre'
+  spec.add_runtime_dependency 'pageflow', '~> 0.10'
 
   # Using translations from rails locales in javascript code.
   spec.add_runtime_dependency 'i18n-js'
@@ -25,4 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec-rails", "~> 2.0"
   spec.add_development_dependency 'factory_girl_rails'
   spec.add_development_dependency "sqlite3"
+
+  # Semantic versioning rake tasks
+  spec.add_development_dependency 'semmy', '~> 0.2'
 end
