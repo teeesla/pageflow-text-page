@@ -22,6 +22,16 @@ $inverted-background-color: black;
   }
 }
 
+.text_page {
+  .page_background_asset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
 .page .text_page, .js .page .text_page, .js .page:first-child .text_page, .page:first-child .text_page {
 
   .backgroundArea {

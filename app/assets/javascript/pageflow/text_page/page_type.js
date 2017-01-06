@@ -1,4 +1,4 @@
-pageflow.pageType.register('text_page', _.extend({
+pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
 
   prepareNextPageTimeout: 0,
 
@@ -7,7 +7,7 @@ pageflow.pageType.register('text_page', _.extend({
     this.scrollingDiv = pageElement.find('.scroller > div');
     this.pageSpacerElement = pageElement.find('.page_spacer');
     this.contentArea = pageElement.find('.contentText');
-    this.backgroundArea = pageElement.find('.background');
+    this.backgroundAsset = pageElement.find('.page_background_asset');
     this.inlineImage = pageElement.find('.inline_image');
     this.inlineImageInitialOffset = pageElement.find('.contentText h3').position().top + pageElement.find('.contentText h3').outerHeight();
     this.fullScreenLayer = pageElement.find('.image_fullscreen_view');
@@ -67,19 +67,19 @@ pageflow.pageType.register('text_page', _.extend({
     pageElement.find('.backgroundArea .fixed_header_area').css('opacity', (0.6 * dimHeightTitle + y)/(dimHeightTitle * 0.6)); // Abblenden des Titels, immer*/
 
     if(configuration.topasset_dim) {
-      pageElement.find('.backgroundArea .background').css('opacity', 1 - (-y / dimHeight)); // Abblenden */
+      this.backgroundAsset.css('opacity', 1 - (-y / dimHeight)); // Abblenden */
     }
     else {
-      pageElement.find('.backgroundArea .background').css('opacity', 1);
+      this.backgroundAsset.css('opacity', 1);
     }
 
     var parallaxPosition = y * 0.2;
 
     if(configuration.topasset_parallax) {
-      pageElement.find('.backgroundArea .background').css({"-webkit-transform":"translateY(" + parallaxPosition + "px)", "-moz-transform":"translateY(" + parallaxPosition + "px)", "-ms-transform":"translateY(" + parallaxPosition + "px)", "-o-transform":"translateY(" + parallaxPosition + "px)", "transform":"translateY(" + parallaxPosition + "px)"}); // Parallax
+      this.backgroundAsset.css({"-webkit-transform":"translateY(" + parallaxPosition + "px)", "-moz-transform":"translateY(" + parallaxPosition + "px)", "-ms-transform":"translateY(" + parallaxPosition + "px)", "-o-transform":"translateY(" + parallaxPosition + "px)", "transform":"translateY(" + parallaxPosition + "px)"}); // Parallax
     }
     else {
-      pageElement.find('.backgroundArea .background').css({'-webkit-transform': 'translateY(0)','-o-transform': 'translateY(0)','-ms-transform': 'translateY(0)', '-moz-transform': 'translateY(0)', 'transform': 'translateY(0)'}); // Parallax
+      this.backgroundAsset.css({'-webkit-transform': 'translateY(0)','-o-transform': 'translateY(0)','-ms-transform': 'translateY(0)', '-moz-transform': 'translateY(0)', 'transform': 'translateY(0)'}); // Parallax
     }
   },
 
@@ -112,7 +112,7 @@ pageflow.pageType.register('text_page', _.extend({
   },
 
   resizePageSpacer: function(pageElement, configuration) {
-    if(pageElement.find('.content_and_background').hasClass('no_background_image')) {
+    if(pageElement.find('.content_and_background').hasClass('no_background_asset')) {
       this.pageSpacerElement.css('height', this.titleArea.outerHeight() + 'px');
     }
     else {
@@ -130,7 +130,7 @@ pageflow.pageType.register('text_page', _.extend({
       }
     }
 
-    this.backgroundArea.css('height', this.pageSpacerElement.height() + 'px');
+    this.backgroundAsset.css('height', this.pageSpacerElement.height() + 'px');
 
     this.contentArea.css('min-height', pageElement.height() + 'px'); //min-heights for white area/ text area for short text?
     this.content.scroller('refresh');
@@ -148,10 +148,6 @@ pageflow.pageType.register('text_page', _.extend({
   },
 
   prepare: function(pageElement, configuration) {
-  },
-
-  preload: function(pageElement, configuration) {
-    return pageflow.preload.backgroundImage(pageElement.find('.background_image'));
   },
 
   activating: function(pageElement, configuration) {
@@ -186,7 +182,10 @@ pageflow.pageType.register('text_page', _.extend({
     pageElement.find('.contentText .text_title').text(configuration.get('text_title') || '');
     pageElement.find('.contentText p').html(configuration.get('text') || '');
 
-    pageElement.find('.content_and_background').toggleClass('no_background_image', !configuration.getImageFile('background_image_id'));
+    pageElement.find('.content_and_background').toggleClass('no_background_asset',
+                                                            configuration.get('background_type') == 'video' ?
+                                                            !configuration.getVideoFile('video_file_id') :
+                                                            !configuration.getImageFile('background_image_id'));
 
     pageElement.find('.content_and_background').toggleClass('sticky_inline_image', !!configuration.get('sticky_inline_image'));
 
@@ -196,8 +195,6 @@ pageflow.pageType.register('text_page', _.extend({
     else {
       this.titleArea = pageElement.find('.contentInnerWrapper .page_header');
     }
-
-    this.updateCommonPageCssClasses(pageElement, configuration);
 
     _.forEach(pageflow.textPage.titlePositions, function(position) {
       pageElement.toggleClass('text_position_' + position, configuration.get('text_position') === position);
@@ -243,10 +240,6 @@ pageflow.pageType.register('text_page', _.extend({
 
   embeddedEditorViews: function() {
     return {
-      '.background_image': {
-        view: pageflow.BackgroundImageEmbeddedView,
-        options: {propertyName: 'background_image_id'}
-      },
       '.inline_image': {
         view: pageflow.textPage.ContentImageEmbeddedView,
         options: {
@@ -263,4 +256,4 @@ pageflow.pageType.register('text_page', _.extend({
       }
     };
   }
-}, pageflow.commonPageCssClasses));
+});
