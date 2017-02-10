@@ -12,12 +12,9 @@ pageflow.ConfigurationEditorView.register('text_page', {
       this.input('tagline', pageflow.TextInputView);
       this.input('subtitle', pageflow.TextInputView);
       this.input('text_position', pageflow.SelectInputView, {values: pageflow.textPage.titlePositions});
-      this.input('background_image_id', pageflow.FileInputView, {
-        collection: pageflow.imageFiles,
-        fileSelectionHandlerOptions: {
-          returnToTab: 'header'
-        }
-      });
+
+      this.group('background');
+
       this.input('gradient_opacity', pageflow.SliderInputView);
       this.input('invert', pageflow.CheckBoxInputView);
     });

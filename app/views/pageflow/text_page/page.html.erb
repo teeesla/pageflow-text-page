@@ -1,7 +1,7 @@
 <div class="blackLayer"></div>
-<div class="content_and_background text_page <% if configuration['sticky_inline_image'] %>sticky_inline_image<% end %> <%= content_image_present_css_class(configuration['background_image_id']) %> <% if configuration['invert_text'] %>invert_text<% end %>">
+<div class="content_and_background text_page <% if configuration['sticky_inline_image'] %>sticky_inline_image<% end %> <%= background_asset_present_css_class(configuration) %> <% if configuration['invert_text'] %>invert_text<% end %>">
   <div class="backgroundArea">
-    <%= background_image_div(configuration, 'background_image') %>
+    <%= page_background_asset(configuration) %>
     <%= shadow_div :opacity => configuration['gradient_opacity'] %>
     <div class="fixed_header_area">
       <div class="page_header_wrapper">

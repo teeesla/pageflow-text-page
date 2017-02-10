@@ -28,9 +28,15 @@ module Pageflow
         end
       end
 
-      def content_image_present_css_class(id)
-        image = Pageflow::ImageFile.find_by_id(id)
-        image ? '' : 'no_background_image'
+      def background_asset_present_css_class(configuration)
+        file =
+          if configuration['background_type'] == 'video'
+            Pageflow::VideoFile.find_by_id(configuration['video_file_id'])
+          else
+            Pageflow::ImageFile.find_by_id(configuration['background_image_id'])
+          end
+
+        file ? '' : 'no_background_asset'
       end
     end
   end
