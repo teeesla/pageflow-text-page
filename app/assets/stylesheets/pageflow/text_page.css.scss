@@ -278,13 +278,12 @@ $inverted-background-color: black;
 }
 
 .text_position_right.page .text_page {
-    h2 .title,
-    h2 .subtitle,
-    h2 .tagline
-     {
-      max-width: 500px;
-    }
+  h2 .title,
+  h2 .subtitle,
+  h2 .tagline {
+    max-width: 500px;
   }
+}
 
 .text_position_center, .text_position_right .text_position_center {
   .text_page {
