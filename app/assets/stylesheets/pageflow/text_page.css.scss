@@ -355,6 +355,7 @@ $inverted-background-color: black;
 
         h3, p {
           margin: 0;
+          max-width: 500px;
         }
 
         @include narrow_desktop {
