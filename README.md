@@ -13,7 +13,7 @@ Add this line to your application's `Gemfile`:
 Register the page type inside the configure block in `config/initializers/pageflow.rb`
 
     Pageflow.configure do |config|
-      config.register_page_type(Pageflow::TextPage.page_type)
+      config.page_types.register(Pageflow::TextPage.page_type)
     end
 
 Include javascripts and stylesheets:
@@ -24,10 +24,10 @@ Include javascripts and stylesheets:
     # app/assets/javascripts/pageflow/editor.js
     //= require pageflow/text_page/editor
 
-    # app/assets/stylesheets/pageflow/application.css.scss
+    # app/assets/stylesheets/pageflow/application.scss
     @import "pageflow/text_page";
 
-    # app/assets/stylesheets/pageflow/themes/default.css.scss
+    # app/assets/stylesheets/pageflow/themes/default.scss
     @import "pageflow/text_page/themes/default";
 
 Execute `bundle install` Restart the application server.
@@ -35,9 +35,9 @@ Execute `bundle install` Restart the application server.
 ## Troubleshooting
 
 If you run into problems while installing the page type, please also refer to the
-[Troubleshooting](https://github.com/codevise/pageflow/wiki/Troubleshooting) wiki 
-page in the [Pageflow  repository](https://github.com/codevise/pageflow). If that 
-doesn't help, consider 
+[Troubleshooting](https://github.com/codevise/pageflow/wiki/Troubleshooting) wiki
+page in the [Pageflow  repository](https://github.com/codevise/pageflow). If that
+doesn't help, consider
 [filing an issue](https://github.com/codevise/pageflow-text-page/issues).
 
 ## Contributing Locales
